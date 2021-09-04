@@ -18,14 +18,15 @@
     />
     <!-- Rounded switch -->
     <label for="rememberme">记住我:</label>
-    <SwitchCheckbox
+    <SwitchCheckbox id="rememberme" v-model="rememberme" />
+    <!-- <SwitchCheckbox
       :value="rememberme"
       @input="
         newValue => {
           rememberme = newValue;
         }
       "
-    />
+    /> -->
     <button type="submit">提交</button>
   </form>
 </template>

@@ -1,6 +1,12 @@
 <template>
   <label class="switch">
-    <input type="checkbox" :checked="value" @click="toggle" />
+    <input
+      :id="id"
+      :name="id"
+      type="checkbox"
+      :checked="value"
+      @click="toggle"
+    />
     <span class="slider round"></span>
   </label>
 </template>
@@ -8,6 +14,7 @@
 <script>
 export default {
   props: {
+    id: String,
     value: Boolean,
   },
   methods: {
