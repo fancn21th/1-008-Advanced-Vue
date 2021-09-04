@@ -18,21 +18,25 @@
     />
     <!-- Rounded switch -->
     <label for="rememberme">记住我:</label>
-    <label class="switch">
-      <input
-        type="checkbox"
-        id="rememberme"
-        name="rememberme"
-        v-model="rememberme"
-      />
-      <span class="slider round"></span>
-    </label>
+    <SwitchCheckbox
+      :value="rememberme"
+      @input="
+        newValue => {
+          rememberme = newValue;
+        }
+      "
+    />
     <button type="submit">提交</button>
   </form>
 </template>
 
 <script>
+import SwitchCheckbox from './SwitchCheckbox.vue';
+
 export default {
+  components: {
+    SwitchCheckbox,
+  },
   data() {
     return {
       email: 'fancn21th@gmail.com',
