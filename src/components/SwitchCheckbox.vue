@@ -4,8 +4,8 @@
       :id="id"
       :name="id"
       type="checkbox"
-      :checked="value"
-      @click="toggle"
+      :checked="toggled"
+      @click="checked"
     />
     <span class="slider round"></span>
   </label>
@@ -13,13 +13,17 @@
 
 <script>
 export default {
+  model: {
+    prop: 'toggled',
+    event: 'toggle',
+  },
   props: {
     id: String,
-    value: Boolean,
+    toggled: Boolean,
   },
   methods: {
-    toggle() {
-      this.$emit('input', !this.value);
+    checked() {
+      this.$emit('toggle', !this.toggled);
     },
   },
 };
