@@ -2,7 +2,7 @@
   <!-- The Modal -->
   <div id="myModal" class="modal" v-show="show">
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-content" @keydown.esc="dismiss" tabindex="0">
       <div class="modal-header">
         <span class="close" @click="dismiss">&times;</span>
         <h2>Modal Header</h2>
@@ -51,6 +51,10 @@ export default {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content:focus {
+  border: 3px solid blue;
 }
 
 /* The Close Button */
