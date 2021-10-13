@@ -33,14 +33,17 @@ export default {
     },
   },
   watch: {
-    show(show) {
-      if (show) {
-        if (this.preventBackgroundSrolling) {
-          document.body.style.setProperty('overflow', 'hidden');
+    show: {
+      immediate: true,
+      handler(show) {
+        if (show) {
+          if (this.preventBackgroundSrolling) {
+            document.body.style.setProperty('overflow', 'hidden');
+          }
+        } else if (this.preventBackgroundSrolling) {
+          document.body.style.removeProperty('overflow');
         }
-      } else if (this.preventBackgroundSrolling) {
-        document.body.style.removeProperty('overflow');
-      }
+      },
     },
   },
   created() {

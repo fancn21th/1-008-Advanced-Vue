@@ -148,7 +148,7 @@
     </p>
     <modal
       :show="modalOpen"
-      :preventBackgroundSrolling="false"
+      :preventBackgroundSrolling="true"
       @close="modalOpen = false"
     />
   </div>
@@ -164,7 +164,7 @@ export default {
   },
   data() {
     return {
-      modalOpen: false,
+      modalOpen: true,
     };
   },
 };
