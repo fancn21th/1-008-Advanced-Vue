@@ -29,6 +29,7 @@ export default {
       }
     };
     document.addEventListener('keydown', escapeHandler);
+    // https://cn.vuejs.org/v2/api/#vm-once
     this.$once('hook:destroyed', () => {
       document.removeEventListener('keydown', escapeHandler);
     });
