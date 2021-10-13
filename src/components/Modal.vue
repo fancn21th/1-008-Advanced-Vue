@@ -3,7 +3,7 @@
   <div id="myModal" class="modal" v-show="show">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close" @click="dismiss">&times;</span>
       <p>Some text in the Modal..</p>
     </div>
   </div>
@@ -12,6 +12,11 @@
 <script>
 export default {
   props: ['show'],
+  methods: {
+    dismiss() {
+      this.$emit('close');
+    },
+  },
 };
 </script>
 

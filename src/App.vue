@@ -2,7 +2,7 @@
   <div id="app">
     <!-- Trigger/Open The Modal -->
     <button @click="modalOpen = true">Open Modal</button>
-    <modal :show="modalOpen" />
+    <modal :show="modalOpen" @close="modalOpen = false" />
   </div>
 </template>
 
