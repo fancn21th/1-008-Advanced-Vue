@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ 'modal-open': modalOpen }">
+  <div id="app">
     <!-- Trigger/Open The Modal -->
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt,
@@ -146,7 +146,11 @@
       deserunt tenetur similique odio iusto laborum nihil nulla, distinctio quod
       itaque unde.
     </p>
-    <modal :show="modalOpen" @close="modalOpen = false" />
+    <modal
+      :show="modalOpen"
+      :preventBackgroundSrolling="false"
+      @close="modalOpen = false"
+    />
   </div>
 </template>
 
@@ -166,14 +170,4 @@ export default {
 };
 </script>
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-.modal-open {
-  max-height: 100vh;
-  overflow: hidden;
-}
-</style>
+<style src="./assets/css/app.css" />

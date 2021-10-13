@@ -20,7 +20,29 @@
 
 <script>
 export default {
-  props: ['show'],
+  props: {
+    show: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    preventBackgroundSrolling: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
+  },
+  watch: {
+    show(show) {
+      if (show) {
+        if (this.preventBackgroundSrolling) {
+          document.body.style.setProperty('overflow', 'hidden');
+        }
+      } else if (this.preventBackgroundSrolling) {
+        document.body.style.removeProperty('overflow');
+      }
+    },
+  },
   created() {
     // 通过闭包保持回掉引用
     const escapeHandler = (e) => {
