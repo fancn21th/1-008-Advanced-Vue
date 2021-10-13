@@ -2,7 +2,7 @@
   <!-- The Modal -->
   <div id="myModal" class="modal" v-show="show">
     <!-- Modal content -->
-    <div class="modal-content" ref="modal" @keydown.esc="dismiss" tabindex="0">
+    <div class="modal-content">
       <div class="modal-header">
         <span class="close" @click="dismiss">&times;</span>
         <h2>Modal Header</h2>
@@ -21,16 +21,17 @@
 <script>
 export default {
   props: ['show'],
-  watch: {
-    show(show) {
-      if (show) {
-        // this.$refs.modal.focus();
-        // 确保 属性变化后 完成更新渲染之后 再设置焦点
-        this.$nextTick(() => {
-          this.$refs.modal.focus();
-        });
+  created() {
+    // 通过闭包保持回掉引用
+    const escapeHandler = (e) => {
+      if (e.key === 'Escape' && this.show) {
+        this.dismiss();
       }
-    },
+    };
+    document.addEventListener('keydown', escapeHandler);
+    this.$once('hook:destroyed', () => {
+      document.removeEventListener('keydown', escapeHandler);
+    });
   },
   methods: {
     dismiss() {
@@ -62,10 +63,6 @@ export default {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-}
-
-.modal-content:focus {
-  border: 3px solid blue;
 }
 
 /* The Close Button */
