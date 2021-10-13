@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <LoginForm />
+    <!-- Trigger/Open The Modal -->
+    <button @click="modalOpen = true">Open Modal</button>
+    <modal :show="modalOpen" />
   </div>
 </template>
 
 <script>
-import LoginForm from './components/LoginForm.vue';
+import Modal from './components/Modal.vue';
 
 export default {
   name: 'App',
   components: {
-    LoginForm,
+    Modal,
+  },
+  data() {
+    return {
+      modalOpen: false,
+    };
   },
 };
 </script>
