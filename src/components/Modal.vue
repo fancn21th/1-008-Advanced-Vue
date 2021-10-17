@@ -1,6 +1,6 @@
 <template>
   <!-- The Modal -->
-  <div id="myModal" class="modal" v-show="show">
+  <div class="modal" v-show="show">
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
