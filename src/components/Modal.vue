@@ -8,8 +8,7 @@
         <h2>Modal Header</h2>
       </div>
       <div class="modal-body">
-        <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
+        <slot></slot>
       </div>
       <div class="modal-footer">
         <h3>Modal Footer</h3>
