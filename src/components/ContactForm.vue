@@ -33,7 +33,9 @@
       ></textarea>
 
       <button>Submit</button>
-      <button @click="$emit('open:confirm-delete-modal')">Delete</button>
+      <button @click="$emit('open:confirm-delete-modal')" class="deleteBtn">
+        Delete
+      </button>
     </form>
   </div>
 </template>
@@ -57,6 +59,10 @@ textarea {
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.deleteBtn {
+  background: #f50000;
 }
 
 /* Style the submit button with a specific background color etc */
