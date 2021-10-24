@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form>
+    <form v-on:submit.prevent>
       <label for="fname">First Name</label>
       <input
         type="text"
@@ -32,23 +32,15 @@
         style="height:200px"
       ></textarea>
 
-      <button @click="submit">Submit</button>
-      <button @click="deleteUser">Delete</button>
+      <button>Submit</button>
+      <button @click="$emit('open:confirm-delete-modal')">Delete</button>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    submit(e) {
-      e.preventDefault();
-    },
-    deleteUser(e) {
-      e.preventDefault();
-      this.$emit('open:confirm-delete-modal');
-    },
-  },
+  methods: {},
 };
 </script>
 
