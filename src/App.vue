@@ -6,7 +6,7 @@
       :preventBackgroundSrolling="true"
       @close="modalOpen = false"
     >
-      <contact-form />
+      <contact-form @open:confirm-delete-modal="deleteModalOpen = true" />
     </modal>
     <delete-modal
       :show="deleteModalOpen"

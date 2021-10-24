@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form action="action_page.php">
+    <form>
       <label for="fname">First Name</label>
       <input
         type="text"
@@ -32,13 +32,24 @@
         style="height:200px"
       ></textarea>
 
-      <input type="submit" value="Submit" />
+      <button @click="submit">Submit</button>
+      <button @click="deleteUser">Delete</button>
     </form>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    submit(e) {
+      e.preventDefault();
+    },
+    deleteUser(e) {
+      e.preventDefault();
+      this.$emit('open:confirm-delete-modal');
+    },
+  },
+};
 </script>
 
 <style>
