@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <button @click="modalOpen = true">Open Modal</button>
-    <modal
-      :show="modalOpen"
-      :preventBackgroundSrolling="true"
-      @close="modalOpen = false"
-    >
-      <contact-form @open:confirm-delete-modal="deleteModalOpen = true" />
-    </modal>
+    <button @click="modalOpen = true">
+      Open Modal
+
+      <modal
+        :show="modalOpen"
+        :preventBackgroundSrolling="true"
+        @close="modalOpen = false"
+      >
+        <contact-form @open:confirm-delete-modal="deleteModalOpen = true" />
+      </modal>
+    </button>
+
     <delete-modal
       :show="deleteModalOpen"
       @close="deleteModalOpen = false"

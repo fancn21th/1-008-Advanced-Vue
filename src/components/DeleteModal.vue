@@ -1,6 +1,6 @@
 <template>
   <div class="modal" v-show="show">
-    <span @click="dismiss" class="close" title="Close Modal">&times;</span>
+    <span @click.stop="dismiss" class="close" title="Close Modal">&times;</span>
     <form class="modal-content">
       <div class="container">
         <h1>Delete Account</h1>
