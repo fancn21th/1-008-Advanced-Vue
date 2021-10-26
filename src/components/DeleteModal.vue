@@ -7,10 +7,12 @@
         <p>Are you sure you want to delete your account?</p>
 
         <div class="clearfix">
-          <button type="button" class="cancelbtn" @click="dismiss">
+          <button type="button" class="cancelbtn" @click.stop="dismiss">
             Cancel
           </button>
-          <button type="button" class="deletebtn">Delete</button>
+          <button type="button" class="deletebtn">
+            Delete
+          </button>
         </div>
       </div>
     </form>

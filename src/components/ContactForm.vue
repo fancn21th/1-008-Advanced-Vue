@@ -33,15 +33,18 @@
       ></textarea>
 
       <button>Submit</button>
-      <button @click="$emit('open:confirm-delete-modal')" class="deleteBtn">
-        Delete
-      </button>
+      <delete-contact-button></delete-contact-button>
     </form>
   </div>
 </template>
 
 <script>
+import DeleteContactButton from './DeleteContactButton.vue';
+
 export default {
+  components: {
+    DeleteContactButton,
+  },
   methods: {},
 };
 </script>
@@ -59,10 +62,6 @@ textarea {
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-.deleteBtn {
-  background: #f50000;
 }
 
 /* Style the submit button with a specific background color etc */
