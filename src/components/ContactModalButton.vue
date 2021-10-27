@@ -1,14 +1,14 @@
 <template>
-  <button @click="modalOpen = true">
+  <button @click="modalOpen = true" style="opacity: .5">
     Open Modal
-
     <modal
       :show="modalOpen"
       :preventBackgroundSrolling="true"
       @close="modalOpen = false"
     >
-      <contact-form @open:confirm-delete-modal="deleteModalOpen = true" />
+      <contact-form />
     </modal>
+    <portal to="modals" v-if="modalOpen"> </portal>
   </button>
 </template>
 

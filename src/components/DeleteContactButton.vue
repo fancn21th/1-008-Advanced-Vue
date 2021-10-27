@@ -1,11 +1,12 @@
 <template>
   <button @click="deleteModalOpen = true" class="deleteBtn">
     Delete
-
-    <delete-modal
-      :show="deleteModalOpen"
-      @close="deleteModalOpen = false"
-    ></delete-modal>
+    <portal to="modals" v-if="deleteModalOpen">
+      <delete-modal
+        :show="deleteModalOpen"
+        @close="deleteModalOpen = false"
+      ></delete-modal>
+    </portal>
   </button>
 </template>
 
