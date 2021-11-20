@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="contact in data" :key="contact.id">
-      <slot>{{ contact.name }}</slot>
+      <slot :contact="contact">{{ contact.name }}</slot>
     </li>
   </ul>
 </template>

@@ -1,18 +1,27 @@
 <template>
   <div class="chip">
-    <img
-      src="@/assets/image/avatar-1.png"
-      alt="Person"
-      width="96"
-      height="96"
-    />
-    John Doe
+    <img :src="getImgUrl(imgUrl)" alt="Person" width="96" height="96" />
+    <slot></slot>
     <span class="closebtn">&times;</span>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    imgUrl: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    getImgUrl(avatar) {
+      // https://stackoverflow.com/questions/40491506/vue-js-dynamic-images-not-working
+      const images = require.context('../assets/image', false, /\.png$/);
+      return images(`./${avatar}.png`);
+    },
+  },
+};
 </script>
 
 <style>
