@@ -50,6 +50,10 @@ export default {
 </script>
 
 <style>
+form label {
+  color: black !important;
+}
+
 /* Style inputs with type="text", select elements and textareas */
 input[type='text'],
 select,

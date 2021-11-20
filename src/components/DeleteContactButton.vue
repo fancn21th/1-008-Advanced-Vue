@@ -1,21 +1,39 @@
 <template>
   <button @click="deleteModalOpen = true" class="deleteBtn">
     Delete
-    <portal to="modals" v-if="deleteModalOpen">
-      <delete-modal
-        :show="deleteModalOpen"
-        @close="deleteModalOpen = false"
-      ></delete-modal>
-    </portal>
+    <modal-dialog
+      :show="deleteModalOpen"
+      :preventBackgroundSrolling="true"
+      @close="deleteModalOpen = false"
+    >
+      <!-- 自定义 删除 Dialog  TODO: 可以封装成一个单独的组件 -->
+      <div class="container">
+        <h1>Delete Account</h1>
+        <p>Are you sure you want to delete your account?</p>
+
+        <div class="clearfix">
+          <button
+            type="button"
+            class="cancelbtn"
+            @click.stop="deleteModalOpen = false"
+          >
+            Cancel
+          </button>
+          <button type="button" class="deletebtn">
+            Delete
+          </button>
+        </div>
+      </div>
+    </modal-dialog>
   </button>
 </template>
 
 <script>
-import DeleteModal from './DeleteModal.vue';
+import ModalDialog from './ModalDialog.vue';
 
 export default {
   components: {
-    DeleteModal,
+    ModalDialog,
   },
   data() {
     return {

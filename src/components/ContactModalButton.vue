@@ -1,24 +1,23 @@
 <template>
-  <button @click="modalOpen = true" style="opacity: .5">
+  <button @click="modalOpen = true">
     Open Modal
-    <modal
+    <modal-dialog
       :show="modalOpen"
       :preventBackgroundSrolling="true"
       @close="modalOpen = false"
     >
       <contact-form />
-    </modal>
-    <portal to="modals" v-if="modalOpen"> </portal>
+    </modal-dialog>
   </button>
 </template>
 
 <script>
-import Modal from './Modal.vue';
+import ModalDialog from './ModalDialog.vue';
 import ContactForm from './ContactForm.vue';
 
 export default {
   components: {
-    Modal,
+    ModalDialog,
     ContactForm,
   },
   data() {
