@@ -187,7 +187,7 @@ button:hover {
 .container {
   padding: 16px;
   text-align: left;
-  color: black !important;
+  color: black;
 }
 
 /* The Modal (background) */

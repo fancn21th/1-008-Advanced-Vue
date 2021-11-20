@@ -51,7 +51,7 @@ export default {
 
 <style>
 form label {
-  color: black !important;
+  color: black;
 }
 
 /* Style inputs with type="text", select elements and textareas */
