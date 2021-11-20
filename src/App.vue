@@ -1,26 +1,30 @@
 <template>
   <div id="app">
-    <contact-modal-button class="contact-modal-button"></contact-modal-button>
-
-    <portal-target name="modals">
-      <!--
-      This component can be located anywhere in your App.
-      The slot content of the above portal component will be rendered here.
-      -->
-    </portal-target>
+    <contact-list :data="contactList"></contact-list>
   </div>
 </template>
 
 <script>
-import ContactModalButton from './components/ContactModalButton.vue';
+import ContactList from './components/ContactList.vue';
 
 export default {
   name: 'App',
   components: {
-    ContactModalButton,
+    ContactList,
   },
   data() {
-    return {};
+    return {
+      contactList: [
+        {
+          id: 1,
+          name: 'John Doe',
+        },
+        {
+          id: 2,
+          name: 'Joe Lin',
+        },
+      ],
+    };
   },
 };
 </script>
