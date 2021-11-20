@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <contact-modal-button></contact-modal-button>
+    <contact-modal-button class="contact-modal-button"></contact-modal-button>
 
     <portal-target name="modals">
       <!--

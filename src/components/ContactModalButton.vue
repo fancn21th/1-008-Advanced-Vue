@@ -1,5 +1,5 @@
 <template>
-  <button @click="modalOpen = true">
+  <button @click="modalOpen = true" class="modal-button">
     Open Modal
     <modal-dialog
       :show="modalOpen"
@@ -28,4 +28,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.modal-button {
+  font-weight: 900;
+}
+</style>
