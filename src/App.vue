@@ -2,10 +2,10 @@
   <div id="app">
     <contact-list
       :data="contactList"
-      :pseudo-slot="(props) => props.contact.name"
+      :pseudo-slot="({ contact }) => contact.name"
     >
-      <contact slot-scope="props" :imgUrl="props.contact.imageUrl">{{
-        props.contact.name
+      <contact slot-scope="{ contact }" :imgUrl="contact.imageUrl">{{
+        contact.name
       }}</contact>
     </contact-list>
   </div>
