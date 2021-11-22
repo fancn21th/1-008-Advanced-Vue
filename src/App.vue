@@ -4,11 +4,9 @@
       :data="contactList"
       :pseudo-slot="(props) => props.contact.name"
     >
-      <template slot-scope="props">
-        <contact :imgUrl="props.contact.imageUrl">{{
-          props.contact.name
-        }}</contact>
-      </template>
+      <contact slot-scope="props" :imgUrl="props.contact.imageUrl">{{
+        props.contact.name
+      }}</contact>
     </contact-list>
   </div>
 </template>
