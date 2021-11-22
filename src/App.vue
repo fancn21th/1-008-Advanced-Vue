@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <contact-list :data="contactList">
+    <contact-list
+      :data="contactList"
+      :pseudo-slot="(props) => props.contact.name"
+    >
       <template slot-scope="props">
         <contact :imgUrl="props.contact.imageUrl">{{
           props.contact.name
